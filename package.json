@@ -1,6 +1,6 @@
 {
 	"name": "@nomad-solutions/dev-env",
-	"version": "1.0.1",
+	"version": "2.0.0",
 	"type": "module",
 	"scripts": {
 		"prepare": "husky",
