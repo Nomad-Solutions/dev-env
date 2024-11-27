@@ -1,5 +1,5 @@
 {
-	"name": "dev-env",
+	"name": "@nomad-solutions/dev-env",
 	"version": "1.0.0",
 	"type": "commonjs",
 	"scripts": {
