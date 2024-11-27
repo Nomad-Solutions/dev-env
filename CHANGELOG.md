@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.0.0](https://github.com/Nomad-Solutions/dev-env/compare/v1.0.1...v2.0.0) (2024-11-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* change package export for tsconfig to avoid name conflict
+
+### Bug Fixes
+
+* change package export for tsconfig to avoid name conflict ([f6ba944](https://github.com/Nomad-Solutions/dev-env/commit/f6ba94452d7ae772db2f147976330101dd13e107))
+
 ## [1.0.1](https://github.com/Nomad-Solutions/dev-env/compare/v1.0.0...v1.0.1) (2024-11-27)
 
 
