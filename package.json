@@ -1,7 +1,7 @@
 {
 	"name": "@nomad-solutions/dev-env",
 	"version": "1.0.0",
-	"type": "commonjs",
+	"type": "module",
 	"scripts": {
 		"prepare": "husky",
 		"lint-staged": "lint-staged",
