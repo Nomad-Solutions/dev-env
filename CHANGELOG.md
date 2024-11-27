@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.0.1](https://github.com/Nomad-Solutions/dev-env/compare/v1.0.0...v1.0.1) (2024-11-27)
+
+
+### Bug Fixes
+
+* add husky as trusted dependency to allow prepare hook ([ff939cd](https://github.com/Nomad-Solutions/dev-env/commit/ff939cde5f652e63c7a7aa9631873b8b954007b8))
+
 ## 1.0.0 (2024-11-27)
 
 

@@ -1,6 +1,6 @@
 {
 	"name": "@nomad-solutions/dev-env",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"type": "module",
 	"scripts": {
 		"prepare": "husky",
@@ -28,5 +28,7 @@
 		"lint-staged": "^15.2.10",
 		"typescript-eslint": "^8.15.0"
 	},
-	"trustedDependencies": ["husky"]
+	"trustedDependencies": [
+		"husky"
+	]
 }
