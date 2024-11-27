@@ -10,8 +10,7 @@
 	"exports": {
 		"./commitlint": "./commitlint/commitlint.config.mjs",
 		"./eslint": "./eslint/eslint.config.mjs",
-		"./lint-staged": "./lint-staged/lint-staged.config.mjs",
-		"./ts": "./tsconfig/tsconfig.json"
+		"./lint-staged": "./lint-staged/lint-staged.config.mjs"
 	},
 	"dependencies": {
 		"@commitlint/cli": "^19.6.0",
