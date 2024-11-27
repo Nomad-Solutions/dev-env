@@ -8,9 +8,11 @@
 		"version": "commit-and-tag-version"
 	},
 	"exports": {
-		".": "./main.ts"
+		"./commitlint": "./commitlint/commitlint.config.mjs",
+		"./eslint": "./eslint/eslint.config.mjs",
+		"./lint-staged": "./lint-staged/lint-staged.config.mjs",
+		"./tsconfig": "./tsconfig/tsconfig.json"
 	},
-	"main": "./main.ts",
 	"devDependencies": {
 		"@commitlint/cli": "^19.6.0",
 		"@commitlint/config-conventional": "^19.6.0",
