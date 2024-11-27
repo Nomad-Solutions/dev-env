@@ -81,9 +81,11 @@ After installation, you can extend this tsconfig by adding the following to your
 
 ```json
 {
-	"extends": "@nomad-solutions/dev-env/tsconfig",
+	"extends": "@nomad-solutions/dev-env/tsconfig/tsconfig.json",
 }
 ```
+
+> For some reason, exporting `"./tsconfig": "./tsconfig/tsconfig.json"` does not really work, so instead you will have to use the full path shown above.
 
 ## Development
 
