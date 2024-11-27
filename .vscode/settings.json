@@ -1,0 +1,13 @@
+{
+	"prettier.enable": false,
+	"eslint.enable": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+	},
+	"eslint.validate": [
+		"javascript",
+		"typescript"
+	],
+	"eslint.format.enable": true,
+}

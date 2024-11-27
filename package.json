@@ -1,0 +1,29 @@
+{
+	"name": "dev-env",
+	"version": "1.0.0",
+	"type": "commonjs",
+	"scripts": {
+		"prepare": "husky",
+		"lint-staged": "lint-staged",
+		"version": "commit-and-tag-version"
+	},
+	"exports": {
+		".": "./main.ts"
+	},
+	"main": "./main.ts",
+	"devDependencies": {
+		"@commitlint/cli": "^19.6.0",
+		"@commitlint/config-conventional": "^19.6.0",
+		"@eslint/js": "^9.15.0",
+		"@stylistic/eslint-plugin": "^2.11.0",
+		"@types/bun": "^1.1.14",
+		"commit-and-tag-version": "^12.5.0",
+		"eslint": "^9.15.0",
+		"eslint-plugin-import-newlines": "^1.4.0",
+		"eslint-plugin-newline-destructuring": "^1.2.2",
+		"globals": "^15.12.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^15.2.10",
+		"typescript-eslint": "^8.15.0"
+	}
+}
