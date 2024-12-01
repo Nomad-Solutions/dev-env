@@ -120,8 +120,5 @@ When you have committed all your changes, run the following to create a tagged c
 bun version
 
 # Push changes
-git push
-
-# Push newly created tag
-git push origin v{SEMVER} # insert newest version number, e.g. 1.0.0
+git push --follow-tags
 ```
