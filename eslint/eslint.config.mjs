@@ -1,23 +1,20 @@
 import globals from 'globals';
-import pluginJs from '@eslint/js';
+import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import stylistic from '@stylistic/eslint-plugin';
 import newlineDestructuring from 'eslint-plugin-newline-destructuring';
 import newlineImport from 'eslint-plugin-import-newlines';
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
+export default tseslint.config(
+	eslint.configs.recommended,
+	tseslint.configs.strict,
+	tseslint.configs.stylistic,
 	{
 		files: [ '**/*.{js,mjs,cjs,ts}' ],
 		ignores: [ 'node_modules/' ],
-		languageOptions: { globals: globals.browser },
-	},
-
-	pluginJs.configs.recommended,
-
-	...tseslint.configs.recommended,
-
-	{
+		languageOptions: {
+			globals: globals.browser,
+		},
 		plugins: {
 			'@stylistic': stylistic,
 			'newline-destructuring': newlineDestructuring,
@@ -28,8 +25,14 @@ export default [
 			'semi': [ 'error', 'always' ],
 			quotes: [ 'error', 'single' ],
 			'no-console': [ 'warn', { allow: [ 'warn', 'error', 'info' ] } ],
-			'@typescript-eslint/no-explicit-any': 'error',
-			'@typescript-eslint/no-unused-vars': 'error',
+			camelcase: [
+				'warn',
+				{
+					allow: [],
+				},
+			],
+			curly: [ 'error', 'multi-line' ],
+
 			'no-use-before-define': 'off',
 			'@typescript-eslint/no-use-before-define': [
 				'error',
@@ -40,6 +43,7 @@ export default [
 					classes: false,
 				},
 			],
+
 			'@stylistic/indent': [ 'error', 'tab' ],
 			'@stylistic/no-tabs': 'off',
 			'@stylistic/no-mixed-spaces-and-tabs': 'off',
@@ -70,15 +74,62 @@ export default [
 				} 
 			],
 			'@stylistic/object-property-newline': [ 'error' ],
+			'@stylistic/keyword-spacing': [
+				'error',
+				{
+					before: true,
+					after: true 
+				} 
+			],
+			'@stylistic/padding-line-between-statements': [
+				'error',
+				{
+					blankLine: 'always',
+					prev: '*',
+					next: 'return' 
+				},
+				{
+					blankLine: 'always',
+					prev: [ 'const', 'let', 'var' ],
+					next: '*' 
+				},
+				{
+					blankLine: 'any',
+					prev: [ 'const', 'let', 'var' ],
+					next: [ 'const', 'let', 'var' ] 
+				},
+				{
+					blankLine: 'always',
+					prev: [ 'case', 'default' ],
+					next: '*' 
+				},
+				{
+					blankLine: 'always',
+					prev: 'block-like',
+					next: '*' 
+				}
+			],
+			'@stylistic/newline-per-chained-call': [ 'error', { 'ignoreChainWithDepth': 2 } ],
+			'@stylistic/space-before-function-paren': [
+				'error',
+				{
+					'anonymous': 'never',
+					'named': 'never',
+					'asyncArrow': 'always'
+				} 
+			],
+			'@stylistic/type-annotation-spacing': 'error',
+			'@stylistic/key-spacing': [
+				'error',
+				{
+					'beforeColon': false,
+					'afterColon': true 
+				} 
+			],
+
 			'newline-destructuring/newline': [ 'error' ],
 			'newline-import/enforce': [ 'error', 3 ],
-			camelcase: [
-				'warn',
-				{
-					allow: [],
-				},
-			],
 		},
-	},
-];
+	}
+); 
 
