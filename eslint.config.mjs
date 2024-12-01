@@ -1,5 +1,7 @@
+import tseslint from 'typescript-eslint';
 import config from './eslint/eslint.config.mjs';
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [ ...config ];
+export default tseslint.config(
+	config,
+);
 
