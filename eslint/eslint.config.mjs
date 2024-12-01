@@ -32,6 +32,7 @@ export default tseslint.config(
 				},
 			],
 			curly: [ 'error', 'multi-line' ],
+			'block-spacing': 'error',
 
 			'no-use-before-define': 'off',
 			'@typescript-eslint/no-use-before-define': [
@@ -126,6 +127,14 @@ export default tseslint.config(
 					'afterColon': true 
 				} 
 			],
+			'@stylistic/space-unary-ops': [
+				'error',
+				{
+					words: true,
+					nonwords: false 
+				} 
+			],
+			'@stylistic/space-infix-ops': 'error',
 
 			'newline-destructuring/newline': [ 'error' ],
 			'newline-import/enforce': [ 'error', 3 ],
