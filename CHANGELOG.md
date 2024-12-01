@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.2.0](https://github.com/Nomad-Solutions/dev-env/compare/v2.1.0...v2.2.0) (2024-12-01)
+
+
+### Features
+
+* add spacing rules to eslint ([b8c767b](https://github.com/Nomad-Solutions/dev-env/commit/b8c767b213a2fec8a7024d10b114808f8cdcef24))
+
 ## [2.1.0](https://github.com/Nomad-Solutions/dev-env/compare/v2.0.1...v2.1.0) (2024-12-01)
 
 
