@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.0](https://github.com/Nomad-Solutions/dev-env/compare/v2.0.1...v2.1.0) (2024-12-01)
+
+
+### Features
+
+* add stricter rules ([b831c95](https://github.com/Nomad-Solutions/dev-env/commit/b831c95d8328fac1fc31d33dc637e46f4e9677b8))
+
 ## [2.0.1](https://github.com/Nomad-Solutions/dev-env/compare/v2.0.0...v2.0.1) (2024-11-28)
 
 ## [2.0.0](https://github.com/Nomad-Solutions/dev-env/compare/v1.0.1...v2.0.0) (2024-11-27)
