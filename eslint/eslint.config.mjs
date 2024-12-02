@@ -49,6 +49,7 @@ export default tseslint.config(
 			'@stylistic/no-tabs': 'off',
 			'@stylistic/no-mixed-spaces-and-tabs': 'off',
 			'@stylistic/no-multi-spaces': 'error',
+			'@stylistic/brace-style': [ 'error', '1tbs', { allowSingleLine: true } ],
 			'@stylistic/array-bracket-spacing': [ 'error', 'always' ],
 			'@stylistic/array-bracket-newline': [
 				'error',
