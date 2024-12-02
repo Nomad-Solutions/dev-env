@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.4.0](https://github.com/Nomad-Solutions/dev-env/compare/v2.3.0...v2.4.0) (2024-12-02)
+
+
+### Features
+
+* add blank line linting after imports ([c692afe](https://github.com/Nomad-Solutions/dev-env/commit/c692afe09c41dfbe0452e083c463d62241746338))
+
 ## [2.3.0](https://github.com/Nomad-Solutions/dev-env/compare/v2.2.0...v2.3.0) (2024-12-02)
 
 
