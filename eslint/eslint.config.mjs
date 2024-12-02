@@ -109,7 +109,17 @@ export default tseslint.config(
 					blankLine: 'always',
 					prev: 'block-like',
 					next: '*' 
-				}
+				},
+				{
+					blankLine: 'always',
+					prev: 'import',
+					next: '*' 
+				},
+				{
+					blankLine: 'any',
+					prev: 'import',
+					next: 'import' 
+				},
 			],
 			'@stylistic/newline-per-chained-call': [ 'error', { 'ignoreChainWithDepth': 2 } ],
 			'@stylistic/space-before-function-paren': [
