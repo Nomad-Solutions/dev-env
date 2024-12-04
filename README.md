@@ -92,6 +92,18 @@ After installation, you can extend this tsconfig by adding the following to your
 
 ## Development
 
+### Developing with other application
+When developing on this package, it might be beneficial to see how changes interact with your source code in your application. To do this, you can use [bun link](https://bun.sh/docs/cli/link).
+
+**TLDR**:
+1. Execute `bun link` from the root of this repository.
+2. Execute `bun link @nomad-solutions/dev-env` in the root of your application.
+
+This package should now be usable in your application (see [Usage section](#usage)), and updates to this package will be reflected instantly in your application (by the magic of symlinks).
+
+> [!IMPORTANT]  
+> This will not add the dependency to your `package.json`, so you will need to [install](#install) this package manually if you wish to do use it.
+
 ### Adding a configuration
 
 #### 1. Create a directory with the exported configs in this repository
