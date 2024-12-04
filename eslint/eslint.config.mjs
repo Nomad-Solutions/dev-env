@@ -4,11 +4,14 @@ import tseslint from 'typescript-eslint';
 import stylistic from '@stylistic/eslint-plugin';
 import newlineDestructuring from 'eslint-plugin-newline-destructuring';
 import newlineImport from 'eslint-plugin-import-newlines';
+import json from '@eslint/json';
+import markdown from '@eslint/markdown';
 
 export default tseslint.config(
 	eslint.configs.recommended,
 	tseslint.configs.strict,
 	tseslint.configs.stylistic,
+	
 	{
 		files: [ '**/*.{js,mjs,cjs,ts}' ],
 		ignores: [ 'node_modules/' ],
@@ -150,6 +153,41 @@ export default tseslint.config(
 			'newline-destructuring/newline': [ 'error' ],
 			'newline-import/enforce': [ 'error', 3 ],
 		},
-	}
+	},
+
+	{
+		language: 'json/json',
+		files: [ '**/*.json' ],
+		ignores: [ 'package-lock.json' ],
+		plugins: {
+			json,
+		},
+		...json.configs.recommended,
+	},
+	{
+		language: 'json/jsonc',
+		files: [ '**/*.jsonc' ],
+		plugins: {
+			json,
+		},
+		...json.configs.recommended,
+	},
+	{
+		language: 'json/json5',
+		files: [ '**/*.json5' ],
+		plugins: {
+			json,
+		},
+		...json.configs.recommended,
+	},
+
+	{
+		language: 'markdown/commonmark',
+		files: [ '**/*.md' ],
+		plugins: {
+			markdown
+		},
+		...markdown.configs.recommended
+	}   
 ); 
 
