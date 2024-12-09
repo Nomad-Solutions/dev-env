@@ -74,6 +74,12 @@ export default tseslint.config(
 			'@typescript-eslint/no-import-type-side-effects': 'error',
 			'@typescript-eslint/no-unsafe-type-assertion': 'warn',
 			'@typescript-eslint/prefer-nullish-coalescing': 'off',
+			'@typescript-eslint/no-unnecessary-condition': [
+				'error',
+				{
+					allowConstantLoopConditions: true
+				} 
+			],
 			'@typescript-eslint/no-misused-promises': [
 				'error',
 				{
