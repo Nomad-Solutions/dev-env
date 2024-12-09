@@ -9,5 +9,5 @@
 		"javascript",
 		"typescript"
 	],
-	"eslint.format.enable": true,
+	"eslint.format.enable": true
 }
