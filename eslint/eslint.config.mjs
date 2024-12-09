@@ -43,14 +43,19 @@ export default tseslint.config(
 			'arrow-body-style': [ 'error', 'as-needed' ],
 			'default-param-last': [ 'error' ],
 			'func-style': [ 'error', 'declaration' ],
-			'new-cap': 'error',
 			'no-else-return': 'error',
 			'eqeqeq': 'error',
 			'no-implicit-coercion': 'error',
 			'no-throw-literal': 'error',
 			'no-var': 'error',
 			'prefer-const': 'error',
-			'prefer-destructuring': 'error',
+			'prefer-destructuring': [
+				'warn',
+				{
+					'array': false,
+					'object': true
+				} 
+			],
 			'object-shorthand': 'error',
 
 			'no-use-before-define': 'off',
@@ -68,6 +73,21 @@ export default tseslint.config(
 			'@typescript-eslint/consistent-type-imports': 'error',
 			'@typescript-eslint/no-import-type-side-effects': 'error',
 			'@typescript-eslint/no-unsafe-type-assertion': 'warn',
+			'@typescript-eslint/prefer-nullish-coalescing': 'off',
+			'@typescript-eslint/no-misused-promises': [
+				'error',
+				{
+					checksVoidReturn: false
+				} 
+			],
+			'@typescript-eslint/restrict-template-expressions': [
+				'error',
+				{
+					allowBoolean: true,
+					allowNullish: true,
+					allowNumber: true
+				} 
+			],
 
 			'@stylistic/indent': [ 'error', 'tab' ],
 			'@stylistic/no-tabs': 'off',
