@@ -4,12 +4,22 @@ This repo contains shared development environment configurations for projects.
 ## Install
 Add this repository as a development dependency in your `package.json`:
 
-```json
+**Specific tag (recommended)**
+```json5
 // package.json
 {
 	"devDependencies": {
-		"@nomad-solutions/dev-env": "github:Nomad-Solutions/dev-env#v1.0.0", // specific tag (recommended)
-		"@nomad-solutions/dev-env": "github:Nomad-Solutions/dev-env" // latest commit
+		"@nomad-solutions/dev-env": "github:Nomad-Solutions/dev-env#v1.0.0"
+	}
+}
+```
+
+**Latest commit**
+```json5
+// package.json
+{
+	"devDependencies": {
+		"@nomad-solutions/dev-env": "github:Nomad-Solutions/dev-env"
 	}
 }
 ```
@@ -20,7 +30,8 @@ You can now import and extend (etc) the configurations with `@nomad-solutions/de
 
 ### husky
 After installation, you will need to add an npm script to your `package.json`:
-```json
+
+```json5
 // package.json
 {
 	"scripts": {
@@ -32,7 +43,7 @@ After installation, you will need to add an npm script to your `package.json`:
 Husky is used by other packages to inject effects into git hooks.
 
 ### commitlint
-After installation, you can extend this commitlint config by adding the following to your own commitlint config:
+After installation, you can extend this commitlint config by adding the following to your own `commitlint.config`:
 
 ```javascript
 // commitlint.config.mjs
@@ -42,9 +53,8 @@ export default {
 		'scope-enum': [
 			2,
 			'always',
-			[
-				// add strings here, if you want to enforce specific scopes
-			] 
+			// add strings here, if you want to enforce specific scopes
+			[] 
 		]
 	}
 };
@@ -61,7 +71,7 @@ bunx --no -- commitlint --edit $1
 ```
 
 ### eslint
-After installation, you can extend this eslint config by adding the following to your own eslint config:
+After installation, you can extend this eslint config by adding the following to your own `eslint.config`:
 
 ```javascript
 // eslint.config.mjs
@@ -71,11 +81,10 @@ import config from '@nomad-solutions/dev-env/eslint';
 export default tseslint.config(
 	config,
 );
-
 ```
 
 ### lint-staged
-After installation, you can extend this lint-staged config by adding the following to your own lint-staged config:
+After installation, you can extend this lint-staged config by adding the following to your own `lint-staged.config`:
 
 ```javascript
 // lint-staged.config.mjs
@@ -93,11 +102,12 @@ lint-staged
 ```
 
 ### tsconfig
-After installation, you can extend this tsconfig by adding the following to your own tsconfig:
+After installation, you can extend this tsconfig by adding the following to your own `tsconfig.json`:
 
-```json
+```json5
+// tsconfig.json
 {
-	"extends": "@nomad-solutions/dev-env/tsconfig/tsconfig",
+	"extends": "@nomad-solutions/dev-env/tsconfig/tsconfig"
 }
 ```
 
@@ -125,7 +135,7 @@ E.g. `./eslint/eslint.config.mjs`.
 #### 2. Add the package's export name in this repo's `package.json`
 > The package's export name is the one used when importing the package in the string `@nomad-solutions/dev-env/{package}`.
 
-```json
+```json5
 // package.json
 {
 	"exports": {
