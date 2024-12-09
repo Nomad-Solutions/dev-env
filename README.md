@@ -38,8 +38,21 @@ After installation, you can extend this commitlint config by adding the followin
 // commitlint.config.mjs
 export default { 
 	extends: [ '@nomad-solutions/dev-env/commitlint' ],
+	rules: {
+		'scope-enum': [
+			2,
+			'always',
+			[
+				// add strings here, if you want to enforce specific scopes
+			] 
+		]
+	}
 };
 ```
+
+> [!TIP]
+> [More info on conventional commits scopes](https://www.conventionalcommits.org/en/v1.0.0/#commit-message-with-scope)
+
 
 Then you must create the file `.husky/commit-msg`:
 ```bash
