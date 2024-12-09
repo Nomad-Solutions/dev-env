@@ -1,5 +1,5 @@
 {
-	"extends": "./tsconfig/tsconfig.jsonc",
+	"extends": "./tsconfig/tsconfig.json",
 	"include": [
 		"**/.*",
 		"**/*"
