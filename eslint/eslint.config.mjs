@@ -10,7 +10,7 @@ import markdown from '@eslint/markdown';
 
 export default tseslint.config(
 	{	
-		name: 'dev-env',
+		name: 'dev-env-js-ts',
 		extends: [
 			eslint.configs.recommended,
 			tseslint.configs.strictTypeChecked,
@@ -202,11 +202,13 @@ export default tseslint.config(
 	},
 
 	{
+		name: 'dev-env-disable-type-checked',
 		files: [ '**/*.js' ],
 		extends: [ tseslint.configs.disableTypeChecked ],
 	},
 	
 	{
+		name: 'dev-env-json',
 		language: 'json/json',
 		files: [ '**/*.json' ],
 		ignores: [ 'package-lock.json' ],
@@ -216,6 +218,7 @@ export default tseslint.config(
 		...json.configs.recommended,
 	},
 	{
+		name: 'dev-env-jsonc',
 		language: 'json/jsonc',
 		files: [ '**/*.jsonc' ],
 		plugins: {
@@ -224,6 +227,7 @@ export default tseslint.config(
 		...json.configs.recommended,
 	},
 	{
+		name: 'dev-env-json5',
 		language: 'json/json5',
 		files: [ '**/*.json5' ],
 		plugins: {
@@ -232,12 +236,27 @@ export default tseslint.config(
 		...json.configs.recommended,
 	},
 
-	{
-		language: 'markdown/commonmark',
-		files: [ '**/*.md' ],
-		plugins: {
-			markdown
-		},
-		...markdown.configs.recommended
-	}   
+	/*
+	This will lint the actual markdown, but it cannot lint the code blocks within markdown at the same time.
+	This is a limitation of eslint itself.
+	*/
+	// {
+	// 	name: 'dev-env-markdown',
+	// 	files: [ '**/*.md' ],
+	// 	plugins: {
+	// 		markdown
+	// 	},
+	// 	language: 'markdown/gfm',
+	// 	rules: {
+	// 		'markdown/no-html': 'error',
+	// 		'markdown/fenced-code-language': 'error',
+	// 		'markdown/heading-increment': 'error',
+	// 		'markdown/no-duplicate-headings': 'error',
+	// 		'markdown/no-empty-links': 'error',
+	// 		'markdown/no-html': 'off',
+	// 		'markdown/no-invalid-label-refs': 'error',
+	// 		'markdown/no-missing-label-refs': 'error'
+	// 	}
+	// },
+	...markdown.configs.processor // this lints code blocks within markdown
 );
