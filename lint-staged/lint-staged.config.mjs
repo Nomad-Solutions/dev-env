@@ -1,3 +1,3 @@
 export default {
-	'*.{ts,js}': [ 'eslint' ]
+	'*.{ts,js,mjs,cjs,json,jsonc,json5,md}': [ 'eslint' ]
 };

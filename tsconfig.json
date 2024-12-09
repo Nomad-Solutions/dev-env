@@ -3,5 +3,12 @@
 	"include": [
 		"**/.*",
 		"**/*"
-	]
+	],
+	"exclude": [
+		"node_modules",
+		"dist"
+	],
+	"compilerOptions": {
+		"outDir": "./dist"
+	}
 }
