@@ -22,7 +22,7 @@ export default tseslint.config(
 			globals: globals.browser,
 			parserOptions: {
 				project: true,				
-				tsconfigRootDir: '../',
+				tsConfigRootDir: import.meta.dirname
 			},
 		},
 		plugins: {
