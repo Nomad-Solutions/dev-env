@@ -246,23 +246,23 @@ export default tseslint.config(
 	This will lint the actual markdown, but it cannot lint the code blocks within markdown at the same time.
 	This is a limitation of eslint itself.
 	*/
-	// {
-	// 	name: 'dev-env-markdown',
-	// 	files: [ '**/*.md' ],
-	// 	plugins: {
-	// 		markdown
-	// 	},
-	// 	language: 'markdown/gfm',
-	// 	rules: {
-	// 		'markdown/no-html': 'error',
-	// 		'markdown/fenced-code-language': 'error',
-	// 		'markdown/heading-increment': 'error',
-	// 		'markdown/no-duplicate-headings': 'error',
-	// 		'markdown/no-empty-links': 'error',
-	// 		'markdown/no-html': 'off',
-	// 		'markdown/no-invalid-label-refs': 'error',
-	// 		'markdown/no-missing-label-refs': 'error'
-	// 	}
-	// },
-	...markdown.configs.processor // this lints code blocks within markdown
+	{
+		name: 'dev-env-markdown',
+		files: [ '**/*.md' ],
+		plugins: {
+			markdown
+		},
+		language: 'markdown/gfm',
+		rules: {
+			'markdown/no-html': 'error',
+			'markdown/fenced-code-language': 'error',
+			'markdown/heading-increment': 'error',
+			'markdown/no-duplicate-headings': 'error',
+			'markdown/no-empty-links': 'error',
+			'markdown/no-html': 'off',
+			'markdown/no-invalid-label-refs': 'error',
+			'markdown/no-missing-label-refs': 'error'
+		}
+	},
+	// ...markdown.configs.processor // this lints code blocks within markdown
 );
