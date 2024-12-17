@@ -1,0 +1,23 @@
+{
+	"prettier.enable": false,
+
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit",
+		"source.fixAll.stylelint": "explicit"
+	},
+
+	"eslint.enable": true,
+	"eslint.validate": [
+		"javascript",
+		"typescript"
+	],
+	"eslint.format.enable": true,
+	
+	"tailwindCSS.experimental.classRegex": ["tw`(.*?)`", "tw\\('(.*?)'\\)", "tw\\(\\s*('(.*?)'|\"(.*?)\")\\s*\\)"],
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
+	"editor.quickSuggestions": {
+		"strings": true
+	}
+}
