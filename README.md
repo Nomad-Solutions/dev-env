@@ -26,7 +26,44 @@ Add this repository as a development dependency in your `package.json`:
 
 You can now import and extend (etc) the configurations with `@nomad-solutions/dev-env/{package}`.
 
+### VSCode
+Also install the extension: `KalimahApps.tabaqa` and add it to your workspace recommendations. This will allow you to extend VSCode settings files for your workspace.
+
 ## Usage
+
+### VSCode settings
+<!-- eslint-disable-next-line markdown/no-missing-label-refs -- not a ref -->
+> [!WARNING]
+> Before using tabaqa, you should backup your current `.vscode/settings.json` file, since it will be overwritten by the tabaqa extension.
+
+
+Add the file `.vscode/tabaqa.json` to your workspace with the following content:
+
+**Specific tag (recommended)**
+```json5
+// .vscode/tabaqa.json
+{
+  "extends": "https://raw.githubusercontent.com/Nomad-Solutions/dev-env/refs/tags/v1.0.0/vscode/base.json",
+  "root": true,
+  "settings": {
+		// Your custom VSCode settings here
+  }
+}
+```
+
+**Latest commit to main**
+```json5
+// .vscode/tabaqa.json
+{
+  "extends": "https://raw.githubusercontent.com/Nomad-Solutions/dev-env/refs/heads/main/vscode/base.json",
+  "root": true,
+  "settings": {
+		// Your custom VSCode settings here
+  }
+}
+```
+
+The extension should now create 
 
 ### husky
 After installation, you will need to add an npm script to your `package.json`:
@@ -60,6 +97,7 @@ export default {
 };
 ```
 
+<!-- eslint-disable-next-line markdown/no-missing-label-refs -- not a ref -->
 > [!TIP]
 > [More info on conventional commits scopes](https://www.conventionalcommits.org/en/v1.0.0/#commit-message-with-scope)
 
@@ -124,6 +162,7 @@ When developing on this package, it might be beneficial to see how changes inter
 
 This package should now be usable in your application (see [Usage section](#usage)), and updates to this package will be reflected instantly in your application (by the magic of symlinks).
 
+<!-- eslint-disable-next-line markdown/no-missing-label-refs -- not a ref -->
 > [!IMPORTANT]  
 > This will not add the dependency to your `package.json`, so you will need to [install](#install) this package manually if you wish to do use it.
 
