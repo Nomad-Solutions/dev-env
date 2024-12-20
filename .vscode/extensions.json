@@ -2,6 +2,20 @@
 	"recommendations": [
 		"dbaeumer.vscode-eslint",
 		"github.vscode-github-actions",
-		"adam-bender.commit-message-editor"
+		"oven.bun-vscode",
+		"thebearingedge.vscode-sql-lit",
+		"adam-bender.commit-message-editor",
+		"aaron-bond.better-comments",
+		"bruno-api-client.bruno",
+		"skyboost.nuxt-3-goto",
+		"csstools.postcss",
+		"mylesmurphy.prettify-ts",
+		"yoavbls.pretty-ts-errors",
+		"bradlc.vscode-tailwindcss",
+		"wraith13.unsaved-files-vscode",
+		"vue.volar",
+		"wscats.vue",
+		"kalimahapps.tabaqa",
+		"stylelint.vscode-stylelint"
 	]
 }

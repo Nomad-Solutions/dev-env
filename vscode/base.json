@@ -1,18 +1,70 @@
 {
 	"prettier.enable": false,
+	"editor.formatOnSave": false,
+
+	"css.validate": false,
+	"less.validate": false,
+	"scss.validate": false,
+	"postcss.validate": false,
+
+	"eslint.enable": true,
+	"eslint.format.enable": true,
+	"stylelint.enable": true,
 
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": "explicit",
 		"source.fixAll.stylelint": "explicit"
 	},
 
-	"eslint.enable": true,
-	"eslint.validate": [
-		"javascript",
-		"typescript"
+	"eslint.rules.customizations": [
+		{ "rule": "style/*", "severity": "off", "fixable": true },
+		{ "rule": "format/*", "severity": "off", "fixable": true },
+		{ "rule": "*-indent", "severity": "off", "fixable": true },
+		{ "rule": "*-spacing", "severity": "off", "fixable": true },
+		{ "rule": "*-spaces", "severity": "off", "fixable": true },
+		{ "rule": "*-order", "severity": "off", "fixable": true },
+		{ "rule": "*-dangle", "severity": "off", "fixable": true },
+		{ "rule": "*-newline", "severity": "off", "fixable": true },
+		{ "rule": "*quotes", "severity": "off", "fixable": true },
+		{ "rule": "*semi", "severity": "off", "fixable": true }
 	],
-	"eslint.format.enable": true,
+
+	"eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "vue-html",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "json5",
+    "yaml",
+    "toml",
+    "xml",
+		"svg",
+    "gql",
+    "graphql",
+    "astro",
+    "svelte",
+    "css",
+		"tailwindcss",
+    "less",
+    "scss",
+    "pcss",
+    "postcss"
+  ],
 	
+	"stylelint.packageManager": "pnpm",
+	"stylelint.validate": [
+		"css",
+		"postcss",
+		"tailwindcss",
+		"vue"
+	],
+
 	"tailwindCSS.experimental.classRegex": ["tw`(.*?)`", "tw\\('(.*?)'\\)", "tw\\(\\s*('(.*?)'|\"(.*?)\")\\s*\\)"],
 	"files.associations": {
 		"*.css": "tailwindcss"
