@@ -1,0 +1,5 @@
+{
+  "extends": "../vscode/base.json",
+  "root": true,
+  "settings": {}
+}

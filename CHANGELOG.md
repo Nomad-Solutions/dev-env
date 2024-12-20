@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.0-0](https://github.com/Nomad-Solutions/dev-env/compare/v2.4.0...v3.0.0-0) (2024-12-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* import paths have been changed to allow for different versions of configurations
+
+### Features
+
+* add .vscode settings config ([397746b](https://github.com/Nomad-Solutions/dev-env/commit/397746b7db6e79bf0d8ddb4967fd9a50ea313362))
+* add @eslint/json and @eslint/markdown ([1b6d582](https://github.com/Nomad-Solutions/dev-env/commit/1b6d582d2ef4cf1c29c7b54b4dfa1f021529c970))
+* add nuxt dev env + rewrite ([3ac61c5](https://github.com/Nomad-Solutions/dev-env/commit/3ac61c591c75b797203f0f4277d28b05225b21b8))
+* **eslint:** add typed linting and more lint rules ([9352a22](https://github.com/Nomad-Solutions/dev-env/commit/9352a2285d90fc98621a8b7e6614fdc4a61ed3e5))
+
+
+### Bug Fixes
+
+* **eslint:** allow while(true) ([b80ca10](https://github.com/Nomad-Solutions/dev-env/commit/b80ca10384e2877ada1722b36bc9f8afdd571466))
+* **eslint:** change eslint to lint markdown istead of markdown code blocks ([68941a2](https://github.com/Nomad-Solutions/dev-env/commit/68941a29ca0ccaff30f25d69b6a2a722f470b049))
+* **eslint:** change tsConfigRootDir to work with any consuming project ([eab9e56](https://github.com/Nomad-Solutions/dev-env/commit/eab9e5667b6249fe11b1d587d54ba3e863f8b6fe))
+* **eslint:** only prefer destructuring on objects ([78db77f](https://github.com/Nomad-Solutions/dev-env/commit/78db77ff4c666c746d6dc446d1fdf93f4eb079af))
+* **lint-staged:** add more js filetypes and json types and markdown types to linted types ([fac6d17](https://github.com/Nomad-Solutions/dev-env/commit/fac6d17722280f30f05eae74d338c3b75620d7fc))
+* syntax errors in tsconfigs ([088919d](https://github.com/Nomad-Solutions/dev-env/commit/088919d4f99a8c26d06716589e5bdbd1f23f44f1))
+
 ## [2.4.0](https://github.com/Nomad-Solutions/dev-env/compare/v2.3.0...v2.4.0) (2024-12-02)
 
 

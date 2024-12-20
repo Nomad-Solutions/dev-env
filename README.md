@@ -4,9 +4,14 @@ This repo contains shared development environment configurations for projects.
 ## Install
 Add this repository as a development dependency in your `package.json`:
 
+<!-- eslint-disable-next-line markdown/no-missing-label-refs -- not a ref -->
+> [!TIP]
+> Jump to the [`package.json` section](#packagejson) for a full `package.json` you can copy + paste.
+
 **Specific tag (recommended)**
 ```json5
 // package.json
+
 {
 	"devDependencies": {
 		"@nomad-solutions/dev-env": "github:Nomad-Solutions/dev-env#v1.0.0"
@@ -17,6 +22,7 @@ Add this repository as a development dependency in your `package.json`:
 **Latest commit**
 ```json5
 // package.json
+
 {
 	"devDependencies": {
 		"@nomad-solutions/dev-env": "github:Nomad-Solutions/dev-env"
@@ -27,7 +33,36 @@ Add this repository as a development dependency in your `package.json`:
 You can now import and extend (etc) the configurations with `@nomad-solutions/dev-env/{package}`.
 
 ### VSCode
-Also install the extension: `KalimahApps.tabaqa` and add it to your workspace recommendations. This will allow you to extend VSCode settings files for your workspace.
+Add the following content to your `.vscode/extensions.json` and install the extensions:
+
+```json5
+// extensions.json
+
+{
+	"recommendations": [
+		// Necessary for this dev-env package to work correctly
+		"kalimahapps.tabaqa",
+		"dbaeumer.vscode-eslint",
+		"stylelint.vscode-stylelint",
+
+		// Recommended
+		"github.vscode-github-actions",
+		"oven.bun-vscode",
+		"thebearingedge.vscode-sql-lit",
+		"adam-bender.commit-message-editor",
+		"aaron-bond.better-comments",
+		"bruno-api-client.bruno",
+		"skyboost.nuxt-3-goto",
+		"csstools.postcss",
+		"mylesmurphy.prettify-ts",
+		"yoavbls.pretty-ts-errors",
+		"bradlc.vscode-tailwindcss",
+		"wraith13.unsaved-files-vscode",
+		"vue.volar",
+		"wscats.vue"
+	]
+}
+```
 
 ## Usage
 
@@ -42,6 +77,7 @@ Add the file `.vscode/tabaqa.json` to your workspace with the following content:
 **Specific tag (recommended)**
 ```json5
 // .vscode/tabaqa.json
+
 {
   "extends": "https://raw.githubusercontent.com/Nomad-Solutions/dev-env/refs/tags/v1.0.0/vscode/base.json",
   "root": true,
@@ -54,6 +90,7 @@ Add the file `.vscode/tabaqa.json` to your workspace with the following content:
 **Latest commit to main**
 ```json5
 // .vscode/tabaqa.json
+
 {
   "extends": "https://raw.githubusercontent.com/Nomad-Solutions/dev-env/refs/heads/main/vscode/base.json",
   "root": true,
@@ -63,27 +100,40 @@ Add the file `.vscode/tabaqa.json` to your workspace with the following content:
 }
 ```
 
-The extension should now create 
+When this file is saved, it will automatically create a `settings.json` file for you. **This file should not be edited manually.**
 
-### husky
-After installation, you will need to add an npm script to your `package.json`:
+### package.json
+Various parts of the development environment need scripts in your `package.json`:
 
 ```json5
 // package.json
+
 {
 	"scripts": {
-		"prepare": "husky"
-	}
+		// Husky is used by other packages to inject effects into git hooks.
+		"prepare": "husky",
+		// Will lint and format your files (be careful with --fix if there are many files)
+		"lint:es": "eslint '**/*.{ts,js,mjs,cjs,json,jsonc,json5,md,vue,html,svg,css,postcss,pcss}'",
+		"lint:fix:es": "eslint '**/*.{ts,js,mjs,cjs,json,jsonc,json5,md,vue,html,svg,css,postcss,pcss}' --fix",
+		"lint:style": "stylelint '**/*.{css,postcss,pcss,vue}'",
+		"lint:fix:style": "stylelint '**/*.{css,postcss,pcss,vue}' --fix",
+	},
+	"devDependencies": {
+		"@nomad-solutions/dev-env": "github:Nomad-Solutions/dev-env#v1.0.0"
+	},
+	// If you don't add this, Bun might ask you to trust the package manually because some dependencies run scripts on installation
+	"trustedDependencies": [
+    "@nomad-solutions/dev-env"
+  ]
 }
 ```
 
-Husky is used by other packages to inject effects into git hooks.
-
 ### commitlint
-After installation, you can extend this commitlint config by adding the following to your own `commitlint.config`:
+You can extend this commitlint config by adding the following to your own `commitlint.config`:
 
 ```javascript
 // commitlint.config.mjs
+
 export default { 
 	extends: [ '@nomad-solutions/dev-env/commitlint' ],
 	rules: {
@@ -105,27 +155,62 @@ export default {
 Then you must create the file `.husky/commit-msg`:
 ```bash
 # .husky/commit-msg
+
 bunx --no -- commitlint --edit $1
 ```
 
 ### eslint
-After installation, you can extend this eslint config by adding the following to your own `eslint.config`:
+You can extend these eslint configs by adding them to your own `eslint.config` as shown in the following sections.
+
+The remaining configuration is automatically handled when extending the [Nuxt layer](#nuxt-layer) from this package.
+
+#### Typescript
+Add the following to your `eslint.config.mjs`:
 
 ```javascript
 // eslint.config.mjs
+
 import tseslint from 'typescript-eslint';
-import config from '@nomad-solutions/dev-env/eslint';
+import config from '@nomad-solutions/dev-env/eslint/typescript';
 
 export default tseslint.config(
 	config,
 );
 ```
 
+#### Nuxt
+The Nuxt eslint package requires you to install [the Nuxt eslint module](https://eslint.nuxt.com/packages/module).
+
+Add the following to your `eslint.config.mjs`:
+```javascript
+// eslint.config.mjs
+
+import base from '@nomad-solutions/dev-env/eslint/nuxt'
+import withNuxt from './.nuxt/eslint.config.mjs'
+
+export default withNuxt(base)
+```
+
+
+### stylelint
+You can extend this config by adding it to your own `stylelint.config.mjs`:
+
+```javascript
+// stylelint.config.mjs
+
+/** @type {import('stylelint').Config} */
+export default {
+	extends: [ '@nomad-solutions/dev-env/stylelint' ],
+}
+
+```
+
 ### lint-staged
-After installation, you can extend this lint-staged config by adding the following to your own `lint-staged.config`:
+You can extend this lint-staged config by adding the following to your own `lint-staged.config`:
 
 ```javascript
 // lint-staged.config.mjs
+
 import config from '@nomad-solutions/dev-env/lint-staged';
 
 export default {
@@ -136,6 +221,7 @@ export default {
 Then you must create the file `.husky/pre-commit`:
 ```bash
 # .husky/pre-commit
+
 lint-staged
 ```
 
@@ -144,12 +230,58 @@ After installation, you can extend this tsconfig by adding the following to your
 
 ```json5
 // tsconfig.json
+
 {
-	"extends": "@nomad-solutions/dev-env/tsconfig/tsconfig"
+	"extends": "@nomad-solutions/dev-env/tsconfig/base"
 }
 ```
 
-> For some reason, exporting `"./tsconfig": "./tsconfig/tsconfig.json"` does not really work, so instead you will have to use the full path shown above.
+### Nuxt layer
+To extend the Nuxt base layer, simply add the following to your `nuxt.config.ts`:
+
+```typescript
+// nuxt.config.ts
+
+export default defineNuxtConfig({
+	future: {
+		// Might as well get ready for Nuxt 4
+		compatibilityVersion: 4,
+	},
+
+	extends: [ '@nomad-solutions/dev-env/nuxt/base' ],
+})
+```
+
+This will configure Nuxt with linting rules, Tailwind, Typescript, some nice default settings, etc.
+
+### Tailwind
+
+#### Tailwind configuration
+To extend this configuration, add the following to your `tailwind.config.ts`:
+
+```typescript
+// tailwind.config.ts
+
+import type { Config } from 'tailwindcss'
+import baseConfig from '@nomad-solutions/dev-env/tailwind/base'
+
+export default {
+	presets: [ baseConfig ],
+
+} satisfies Partial<Config>
+```
+
+#### String helper
+To let Typescript know about the global `tw` tagged template literal that enables autocompleted tailwind classes in strings, you will have to create a `globals.d.ts` file at the root of your project:
+
+```typescript
+// globals.d.ts
+
+// Makes sure that typescript knows about the tw tagged template literal used by tailwindcss: https://tailwindcss.nuxtjs.org/tailwind/editor-support#string-classes-autocomplete
+declare function tw(tailwindClasses: TemplateStringsArray): string
+```
+
+[Read more here](https://tailwindcss.nuxtjs.org/tailwind/editor-support#string-classes-autocomplete)
 
 ## Development
 
@@ -164,29 +296,44 @@ This package should now be usable in your application (see [Usage section](#usag
 
 <!-- eslint-disable-next-line markdown/no-missing-label-refs -- not a ref -->
 > [!IMPORTANT]  
-> This will not add the dependency to your `package.json`, so you will need to [install](#install) this package manually if you wish to do use it.
+> This will not add the dependency to your `package.json`, so you will need to [install](#install) this package manually when you wish to do use it.
+
+<!-- eslint-disable-next-line markdown/no-missing-label-refs -- not a ref -->
+> [!TIP]  
+> Remember to execute `bun link @nomad-solutions/dev-env` again if you delete your `node_modules/` or run a `bun install` in the consuming project, since that will unlink this package.
 
 ### Adding a configuration
 
-#### 1. Create a directory with the exported configs in this repository
+#### 1. Create a directory with the exported configs (etc.) in this repository
 E.g. `./eslint/eslint.config.mjs`.
 
 #### 2. Add the package's export name in this repo's `package.json`
+<!-- eslint-disable-next-line markdown/no-missing-label-refs -- not a ref -->
+> [!TIP]  
 > The package's export name is the one used when importing the package in the string `@nomad-solutions/dev-env/{package}`.
 
+E.g.:
 ```json5
 // package.json
+
 {
 	"exports": {
+		// ...
 		"./eslint": "./eslint/eslint.config.mjs"
+		// ...
 	}
 }
 ```
 
-#### 3. Commit your changes with a fitting message
+#### 3. Write a section in this readme
+Remember to add any preconditions such as peer dependencies in the [Install](#install) section or necessary [VSCode extensions](#vscode).
+
+Then write a section under [Usage](#usage) about how to import (and configure, if needed) the configs.
+
+#### 4. Commit your changes with a fitting message
 Format your message with Conventional Commits to make versioning automatic. E.g. `feat(eslint): add eslint config`.
 
-#### 4. Create version tag and changelog
+#### 5. Create version tag and changelog
 When you have committed all your changes, run the following to create a tagged commit with a changelog and push the tag to GitHub:
 
 ```bash
