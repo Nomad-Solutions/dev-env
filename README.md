@@ -14,7 +14,7 @@ Add this repository as a development dependency in your `package.json`:
 
 {
 	"devDependencies": {
-		"@nomad-solutions/dev-env": "github:Nomad-Solutions/dev-env#v1.0.0"
+		"@nomad-solutions/dev-env": "github:Nomad-Solutions/dev-env#v{version}"
 	}
 }
 ```
@@ -79,7 +79,7 @@ Add the file `.vscode/tabaqa.json` to your workspace with the following content:
 // .vscode/tabaqa.json
 
 {
-  "extends": "https://raw.githubusercontent.com/Nomad-Solutions/dev-env/refs/tags/v1.0.0/vscode/base.json",
+  "extends": "https://raw.githubusercontent.com/Nomad-Solutions/dev-env/refs/tags/{version}/vscode/base.json",
   "root": true,
   "settings": {
 		// Your custom VSCode settings here
@@ -119,17 +119,17 @@ Various parts of the development environment need scripts in your `package.json`
 		"lint:fix:style": "stylelint '**/*.{css,postcss,pcss,vue}' --fix",
 	},
 	"devDependencies": {
-		"@nomad-solutions/dev-env": "github:Nomad-Solutions/dev-env#v1.0.0"
+		"@nomad-solutions/dev-env": "github:Nomad-Solutions/dev-env#v{version}"
 	},
 	// If you don't add this, Bun might ask you to trust the package manually because some dependencies run scripts on installation
 	"trustedDependencies": [
-    "@nomad-solutions/dev-env"
-  ]
+		"@nomad-solutions/dev-env"
+	]
 }
 ```
 
 ### commitlint
-You can extend this commitlint config by adding the following to your own `commitlint.config`:
+You can extend this commitlint config by adding the following to your own `commitlint.config.mjs`:
 
 ```javascript
 // commitlint.config.mjs
@@ -140,8 +140,9 @@ export default {
 		'scope-enum': [
 			2,
 			'always',
-			// add strings here, if you want to enforce specific scopes
-			[] 
+			[
+				// add strings here, if you want to enforce specific scopes
+			] 
 		]
 	}
 };
@@ -162,8 +163,6 @@ bunx --no -- commitlint --edit $1
 ### eslint
 You can extend these eslint configs by adding them to your own `eslint.config` as shown in the following sections.
 
-The remaining configuration is automatically handled when extending the [Nuxt layer](#nuxt-layer) from this package.
-
 #### Typescript
 Add the following to your `eslint.config.mjs`:
 
@@ -171,26 +170,29 @@ Add the following to your `eslint.config.mjs`:
 // eslint.config.mjs
 
 import tseslint from 'typescript-eslint';
-import config from '@nomad-solutions/dev-env/eslint/typescript';
+import base from '@nomad-solutions/dev-env/eslint/typescript';
 
 export default tseslint.config(
-	config,
+	base,
 );
 ```
 
 #### Nuxt
-The Nuxt eslint package requires you to install [the Nuxt eslint module](https://eslint.nuxt.com/packages/module).
-
 Add the following to your `eslint.config.mjs`:
 ```javascript
 // eslint.config.mjs
 
-import base from '@nomad-solutions/dev-env/eslint/nuxt'
+import createConfig from '@nomad-solutions/dev-env/eslint/nuxt'
 import withNuxt from './.nuxt/eslint.config.mjs'
 
-export default withNuxt(base)
+export default createConfig(withNuxt, import.meta.dirname)
 ```
 
+<!-- eslint-disable-next-line markdown/no-missing-label-refs -- not a ref -->
+> [!INFO]
+> When using this config, you do not need to use the above [Typescript config](#typescript)
+
+The remaining configuration is automatically handled when extending the [Nuxt layer](#nuxt-layer) from this package.
 
 ### stylelint
 You can extend this config by adding it to your own `stylelint.config.mjs`:
@@ -267,7 +269,6 @@ import baseConfig from '@nomad-solutions/dev-env/tailwind/base'
 
 export default {
 	presets: [ baseConfig ],
-
 } satisfies Partial<Config>
 ```
 
