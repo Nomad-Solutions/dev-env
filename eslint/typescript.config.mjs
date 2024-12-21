@@ -20,7 +20,7 @@ export default tseslint.config(
 			tseslint.configs.stylisticTypeChecked,
 		],
 		files: [ '**/*.{js,mjs,cjs,ts}' ],
-		ignores: [ 'node_modules/' ],
+		ignores: [ '**/node_modules/' ],
 		languageOptions: {
 			globals: globals.browser,
 			parserOptions: {

@@ -86,9 +86,7 @@
 	],
 	"eslint.format.enable": true,
 	"tailwindCSS.experimental.classRegex": [
-		"tw`(.*?)`",
-		"tw\\('(.*?)'\\)",
-		"tw\\(\\s*('(.*?)'|\"(.*?)\")\\s*\\)"
+		"[\"'`](.*?)[\"'`]"
 	],
 	"files.associations": {
 		"*.css": "tailwindcss"
