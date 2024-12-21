@@ -42,7 +42,7 @@ export default tseslint.config(
 
 	{
 		name: 'nomad/disable-type-checked',
-		files: [ '**/*.js' ],
+		files: [ '**/*.{js,mjs,cjs}' ],
 		extends: [ tseslint.configs.disableTypeChecked ],
 	},
 
