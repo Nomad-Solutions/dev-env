@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.0-3](https://github.com/Nomad-Solutions/dev-env/compare/v3.0.0-2...v3.0.0-3) (2024-12-21)
+
+
+### Bug Fixes
+
+* **eslint:** enable md formatting by disabling md linting (only nuxt) ([2a61dad](https://github.com/Nomad-Solutions/dev-env/commit/2a61dad3d37e4c4da6b822c3f4e09b834ae0aba6))
+
 ## [3.0.0-2](https://github.com/Nomad-Solutions/dev-env/compare/v3.0.0-1...v3.0.0-2) (2024-12-21)
 
 ## [3.0.0-1](https://github.com/Nomad-Solutions/dev-env/compare/v2.4.0...v3.0.0-1) (2024-12-20)
