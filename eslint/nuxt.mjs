@@ -13,7 +13,6 @@ import eslintPluginVueScopedCSS from 'eslint-plugin-vue-scoped-css';
 import {
 	baseConfig,
 	typescriptConfig,
-	markdownConfig,
 	jsonConfigs,
 	typescriptTypedConfig,
 	stylisticConfig
@@ -36,7 +35,9 @@ export default function createConfig(withNuxt, tsProjectRoot) {
 
 		...jsonConfigs,
 	
-		markdownConfig,
+		// You can choose between markdown linting, markdown code block linting or markdown formatting with prettier
+		// markdownConfig,
+		// ...markdown.configs.processor,
 		
 		{
 			name: 'nomad/nuxt',
