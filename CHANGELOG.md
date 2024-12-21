@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.0-4](https://github.com/Nomad-Solutions/dev-env/compare/v3.0.0-3...v3.0.0-4) (2024-12-21)
+
+
+### Bug Fixes
+
+* **eslint:** ignore all node_modules from typescript eslint config ([0876cad](https://github.com/Nomad-Solutions/dev-env/commit/0876cad1adfdc13e24066ae73856d619268b9c13))
+* **eslint:** ignore mjs and cjs files in typechecked typescript eslint config ([1d3f7b1](https://github.com/Nomad-Solutions/dev-env/commit/1d3f7b110f2de335edc060bf1e305c2f86c50a6e))
+
 ## [3.0.0-3](https://github.com/Nomad-Solutions/dev-env/compare/v3.0.0-2...v3.0.0-3) (2024-12-21)
 
 
