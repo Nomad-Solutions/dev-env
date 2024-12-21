@@ -271,18 +271,6 @@ export default {
 } satisfies Partial<Config>
 ```
 
-#### String helper
-To let Typescript know about the global `tw` tagged template literal that enables autocompleted tailwind classes in strings, you will have to create a `globals.d.ts` file at the root of your project:
-
-```typescript
-// globals.d.ts
-
-// Makes sure that typescript knows about the tw tagged template literal used by tailwindcss: https://tailwindcss.nuxtjs.org/tailwind/editor-support#string-classes-autocomplete
-declare function tw(tailwindClasses: TemplateStringsArray): string
-```
-
-[Read more here](https://tailwindcss.nuxtjs.org/tailwind/editor-support#string-classes-autocomplete)
-
 ## Development
 
 ### Developing with other application

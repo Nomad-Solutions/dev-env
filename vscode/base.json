@@ -65,7 +65,7 @@
 		"vue"
 	],
 
-	"tailwindCSS.experimental.classRegex": ["tw`(.*?)`", "tw\\('(.*?)'\\)", "tw\\(\\s*('(.*?)'|\"(.*?)\")\\s*\\)"],
+	"tailwindCSS.experimental.classRegex": ["[\"'`](.*?)[\"'`]"],
 	"files.associations": {
 		"*.css": "tailwindcss"
 	},
