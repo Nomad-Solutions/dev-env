@@ -1,5 +1,4 @@
  
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import newlineDestructuring from 'eslint-plugin-newline-destructuring';
 import newlineImport from 'eslint-plugin-import-newlines';
 import stylistic from '@stylistic/eslint-plugin';
