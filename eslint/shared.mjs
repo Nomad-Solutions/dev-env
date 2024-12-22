@@ -258,7 +258,6 @@ export const markdownConfig = {
 	},
 	language: 'markdown/gfm',
 	rules: {
-		'markdown/no-html': 'error',
 		'markdown/fenced-code-language': 'error',
 		'markdown/heading-increment': 'error',
 		'markdown/no-duplicate-headings': 'error',

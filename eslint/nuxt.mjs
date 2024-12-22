@@ -66,9 +66,6 @@ export default function createConfig(withNuxt, tsProjectRoot) {
 			// Typed rules need this whole languageOptions + files snippet, so we must add typed rules in this block
 			name: 'nomad/typed',
 			files: [
-				'**/*.js',
-				'**/*.mjs',
-				'**/*.cjs',
 				'**/*.ts',
 				'**/*.mts',
 				'**/*.cts',
