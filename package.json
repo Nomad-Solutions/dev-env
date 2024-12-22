@@ -19,7 +19,8 @@
     "./eslint/nuxt": "./eslint/nuxt.mjs",
     "./eslint/typescript": "./eslint/typescript.config.mjs",
     "./stylelint": "./stylelint/base.config.mjs",
-    "./lint-staged": "./lint-staged/lint-staged.config.mjs",
+    "./lint-staged/stylelint": "./lint-staged/base.stylelint.config.mjs",
+    "./lint-staged/eslint": "./lint-staged/base.eslint.config.mjs",
     "./tsconfig/base": "./tsconfig/base.json",
     "./nuxt/base": "./nuxt/base/nuxt.config.ts",
     "./tailwind/base": "./tailwind/base/tailwind.config.ts"

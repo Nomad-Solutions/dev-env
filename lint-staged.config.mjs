@@ -1,5 +1,5 @@
-import config from './lint-staged/lint-staged.config.mjs';
+import eslintConfig from './lint-staged/base.eslint.config.mjs';
 
 export default {
-	...config
+	...eslintConfig
 };

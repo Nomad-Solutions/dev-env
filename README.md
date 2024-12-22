@@ -208,17 +208,47 @@ export default {
 ```
 
 ### lint-staged
-You can extend this lint-staged config by adding the following to your own `lint-staged.config`:
+You can extend this lint-staged config by adding the following to your own `lint-staged.config.mjs`:
 
 ```javascript
 // lint-staged.config.mjs
 
-import config from '@nomad-solutions/dev-env/lint-staged';
+import eslintConfig from './lint-staged/base.eslint.config.mjs';
+import createStylelintConfig from './lint-staged/base.stylelint.config.mjs';
 
 export default {
-	...config
+	...eslintConfig,
+	...createStylelintConfig()
 };
 ```
+
+This config will both lint with ESLint and Stylelint on commits, but you can of course omit any linter / formatter you don't need (e.g. stylelint, if you have no CSS to lint).
+
+<!-- eslint-disable-next-line markdown/no-missing-label-refs -- not a ref -->
+> [!TIP]
+> If you have different `lint-staged` needs for different packages in a monorepo, you just add a `lint-staged.config.mjs` file to the root of your specific package.
+> Running `lint-staged` from the root of your monorepo will automatically use configs from subfolders when linting staged files from those subfolders and down. 
+
+<!-- eslint-disable-next-line markdown/no-missing-label-refs -- not a ref -->
+> [!INFO]
+> The `lint-staged` ESLint config will automatically look for the nearest parent `eslint.config` file (any of the regular supported config files) for any given linted file, so this config will work just fine in monorepos wherever your `lint-staged` config file might be.
+>
+
+<!-- eslint-disable-next-line markdown/no-missing-label-refs -- not a ref -->
+> [!INFO]
+> The `lint-staged` Stylelint config will by default use the `stylelint.config.mjs` file that is situated in the same directory as the calling `lint-staged.config.mjs` file.
+>
+> If you want to use a different file, you can do so like this:
+> ```javascript
+> // lint-staged.config.mjs
+> 
+> import createStylelintConfig from './lint-staged/base.stylelint.config.mjs';
+> 
+> export default {
+> 	...createStylelintConfig('./somewhere/else/some.config.mjs')
+> };
+> ```
+>
 
 Then you must create the file `.husky/pre-commit`:
 ```bash
