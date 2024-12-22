@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.0-6](https://github.com/Nomad-Solutions/dev-env/compare/v3.0.0-5...v3.0.0-6) (2024-12-22)
+
 ## [3.0.0-5](https://github.com/Nomad-Solutions/dev-env/compare/v3.0.0-4...v3.0.0-5) (2024-12-22)
 
 ## [3.0.0-4](https://github.com/Nomad-Solutions/dev-env/compare/v3.0.0-3...v3.0.0-4) (2024-12-21)
