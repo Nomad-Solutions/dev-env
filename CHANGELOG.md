@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.0-7](https://github.com/Nomad-Solutions/dev-env/compare/v3.0.0-6...v3.0.0-7) (2024-12-22)
+
+
+### Bug Fixes
+
+* **eslint:** remove js files from nuxt type checked linting ([5f9337a](https://github.com/Nomad-Solutions/dev-env/commit/5f9337aba2850e62c9b9eca9d3f29245ecace40a))
+
 ## [3.0.0-6](https://github.com/Nomad-Solutions/dev-env/compare/v3.0.0-5...v3.0.0-6) (2024-12-22)
 
 ## [3.0.0-5](https://github.com/Nomad-Solutions/dev-env/compare/v3.0.0-4...v3.0.0-5) (2024-12-22)
