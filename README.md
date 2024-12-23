@@ -215,8 +215,8 @@ You can extend this lint-staged config by adding the following to your own `lint
 ```javascript
 // lint-staged.config.mjs
 
-import eslintConfig from './lint-staged/base.eslint.config.mjs';
-import createStylelintConfig from './lint-staged/base.stylelint.config.mjs';
+import eslintConfig from '@nomad-solutions/dev-env/lint-staged/eslint';
+import createStylelintConfig from '@nomad-solutions/dev-env/lint-staged/stylelint';
 
 export default {
 	...eslintConfig,
