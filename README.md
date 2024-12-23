@@ -232,12 +232,12 @@ This config will both lint with ESLint and Stylelint on commits, but you can of 
 > Running `lint-staged` from the root of your monorepo will automatically use configs from subfolders when linting staged files from those subfolders and down. 
 
 <!-- eslint-disable-next-line markdown/no-missing-label-refs -- not a ref -->
-> [!INFO]
+> [!NOTE]
 > The `lint-staged` ESLint config will automatically look for the nearest parent `eslint.config` file (any of the regular supported config files) for any given linted file, so this config will work just fine in monorepos wherever your `lint-staged` config file might be.
 >
 
 <!-- eslint-disable-next-line markdown/no-missing-label-refs -- not a ref -->
-> [!INFO]
+> [!NOTE]
 > The `lint-staged` Stylelint config will by default use the `stylelint.config.mjs` file that is situated in the same directory as the calling `lint-staged.config.mjs` file.
 >
 > If you want to use a different file, you can do so like this:
