@@ -54,6 +54,7 @@ export const stylisticConfig = {
 	rules: {
 		'@stylistic/indent': [ 'error', 'tab' ],
 		'@stylistic/no-tabs': 'off',
+		'@stylistic/comma-spacing': 'error',
 		'@stylistic/no-mixed-spaces-and-tabs': 'off',
 		'@stylistic/no-multi-spaces': 'error',
 		'@stylistic/brace-style': [ 'error', '1tbs', { allowSingleLine: true } ],
