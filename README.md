@@ -151,7 +151,7 @@ export default {
 ```
 
 <!-- eslint-disable-next-line markdown/no-missing-label-refs -- not a ref -->
-> [!TIP]
+> [!NOTE]
 > [More info on conventional commits scopes](https://www.conventionalcommits.org/en/v1.0.0/#commit-message-with-scope)
 
 
@@ -191,8 +191,8 @@ export default createConfig(withNuxt, import.meta.dirname)
 ```
 
 <!-- eslint-disable-next-line markdown/no-missing-label-refs -- not a ref -->
-> [!INFO]
-> When using this config, you do not need to use the above [Typescript config](#typescript)
+> [!IMPORTANT]
+> When using this config, you should not use the above [Typescript config](#typescript)
 
 The remaining configuration is automatically handled when extending the [Nuxt layer](#nuxt-layer) from this package.
 
