@@ -117,6 +117,8 @@ Various parts of the development environment need scripts in your `package.json`
 		"lint:fix:es": "eslint '**/*.{ts,js,mjs,cjs,json,jsonc,json5,md,vue,html,svg,css,postcss,pcss}' --fix",
 		"lint:style": "stylelint '**/*.{css,postcss,pcss,vue}'",
 		"lint:fix:style": "stylelint '**/*.{css,postcss,pcss,vue}' --fix",
+		// Execute `bun version` before pushing commits to increment version and generate changelog
+		"version": "commit-and-tag-version"
 	},
 	"devDependencies": {
 		"@nomad-solutions/dev-env": "github:Nomad-Solutions/dev-env#v{version}"
@@ -301,6 +303,61 @@ export default {
 	presets: [ baseConfig ],
 } satisfies Partial<Config>
 ```
+
+### Versioning
+To enable automatic version incrementation and changelog generation based on your commit messages (thank you commitlint), you will have to add a `.versionrc.mjs` file in the root of your project:
+
+```javascript
+// .versionrc.mjs
+
+export default {
+	path: '.',
+	'tag-prefix': 'v'
+}
+```
+
+Afterwards you should set a fitting first version number in your `package.json`, e.g.:
+
+```json5
+// package.json
+
+{
+	"name": "@nomad-solutions/{package}",
+	"version": "0.1.0",
+	// ...
+}
+```
+
+You can now use the command `commit-and-tag-version`, but I recommend using `bun version` instead, [if you added the `version` script in your `package.json`](#packagejson).
+
+<!-- eslint-disable-next-line markdown/no-missing-label-refs -- not a ref -->
+> [!IMPORTANT]
+> For this to work, you must use [`commitlint`](#commitlint) or be really good at writing consistent, correctly formatted commit messages (lol).
+
+#### Release flow
+1. Make your code changes.
+2. Commit your changes as atomic as possible, so every change can have a descriptive commit message (follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) when writing messages).
+3. Fix any potential linting errors thrown by `lint-staged` if necessary and try step 2 again.
+4. Run `bun version` to increment version number and generate changelog.
+5. Run `git push --follow-tags` to push your changes as well as the new version tag.
+
+<!-- eslint-disable-next-line markdown/no-missing-label-refs -- not a ref -->
+> [!TIP]
+> If you are not using the command line to push changes, try setting `git config --global push.followTags true` so regular pushes always push tags as well.
+
+<!-- eslint-disable-next-line markdown/no-missing-label-refs -- not a ref -->
+> [!TIP]
+> You can use the VSCode extension `adam-bender.commit-message-editor` if you want help with commit message formatting.
+> You can find this editor in the top right (the small pencil icon) of the VSCode Source Control sidebar.
+
+<!-- eslint-disable-next-line markdown/no-missing-label-refs -- not a ref -->
+> [!NOTE]
+> Use `bun version -- --first-release` when you want to create your first version. This will not increment the current version number.
+
+<!-- eslint-disable-next-line markdown/no-missing-label-refs -- not a ref -->
+> [!NOTE]
+> Use `bun version -- --prerelease` when you are not yet sure of the stability of the version you are authoring. Instead of just incrementing the version number, it will append a prerelease version number after the targeted version, e.g.: `3.0.0-0`. Running this multiple times will increment the prerelease version.
+
 
 ## Development
 
