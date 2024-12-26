@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.0-8](https://github.com/Nomad-Solutions/dev-env/compare/v3.0.0-7...v3.0.0-8) (2024-12-26)
+
+
+### Features
+
+* **eslint:** add comma spacing rule ([4d5ce8f](https://github.com/Nomad-Solutions/dev-env/commit/4d5ce8fbd58ea985b79478d03f4af73e24cb616c))
+
+
+### Bug Fixes
+
+* **eslint:** support jsx and tsx files ([9ef63bf](https://github.com/Nomad-Solutions/dev-env/commit/9ef63bf05cfcd2a237db3bb27a0776f03ea792f1))
+
 ## [3.0.0-7](https://github.com/Nomad-Solutions/dev-env/compare/v3.0.0-6...v3.0.0-7) (2024-12-22)
 
 
