@@ -19,7 +19,7 @@ export default tseslint.config(
 			tseslint.configs.strictTypeChecked,
 			tseslint.configs.stylisticTypeChecked,
 		],
-		files: [ '**/*.{js,mjs,cjs,ts}' ],
+		files: [ '**/*.{js,mjs,cjs,jsx,ts,tsx}' ],
 		ignores: [ '**/node_modules/' ],
 		languageOptions: {
 			globals: globals.browser,
@@ -42,7 +42,7 @@ export default tseslint.config(
 
 	{
 		name: 'nomad/disable-type-checked',
-		files: [ '**/*.{js,mjs,cjs}' ],
+		files: [ '**/*.{js,mjs,cjs,jsx}' ],
 		extends: [ tseslint.configs.disableTypeChecked ],
 	},
 
