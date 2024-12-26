@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.0-9](https://github.com/Nomad-Solutions/dev-env/compare/v3.0.0-8...v3.0.0-9) (2024-12-26)
+
+
+### Bug Fixes
+
+* **eslint:** disable no-useless-assignment in vue files ([0dec519](https://github.com/Nomad-Solutions/dev-env/commit/0dec519f2dcc071597e8d23a9fe9197f91f69969))
+
 ## [3.0.0-8](https://github.com/Nomad-Solutions/dev-env/compare/v3.0.0-7...v3.0.0-8) (2024-12-26)
 
 
