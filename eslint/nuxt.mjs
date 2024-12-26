@@ -96,6 +96,15 @@ export default function createConfig(withNuxt, tsProjectRoot) {
 
 				...typescriptTypedConfig.rules,
 			},
+		},
+		{
+			name: 'nomad/vue-overrides',
+
+			files: [ '**/*.vue', ],
+			rules: {
+				// If var is only used in Vue template, this will flag it as useless, which it is not. 
+				'no-useless-assignment': 'off'
+			}
 		}
 	])
 		.replace('nuxt/typescript/setup', {
