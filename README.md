@@ -358,6 +358,10 @@ You can now use the command `commit-and-tag-version`, but I recommend using `bun
 > [!NOTE]
 > Use `bun version -- --prerelease` when you are not yet sure of the stability of the version you are authoring. Instead of just incrementing the version number, it will append a prerelease version number after the targeted version, e.g.: `3.0.0-0`. Running this multiple times will increment the prerelease version.
 
+<!-- eslint-disable-next-line markdown/no-missing-label-refs -- not a ref -->
+> [!NOTE]
+> If you want to create a version, without bumping version number, [read this guide](https://github.com/absolute-version/commit-and-tag-version?tab=readme-ov-file#tag-replacement).
+
 
 ## Development
 
