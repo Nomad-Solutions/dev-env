@@ -60,7 +60,16 @@ export default function createConfig(withNuxt, tsProjectRoot) {
 				...typescriptConfig.rules,
 
 				'semi': 'off', // stylistic handles this
+
 				'vue/multi-word-component-names': 'off',
+				'vue/max-attributes-per-line': [
+					'warn',
+					{
+						singleline: 2,
+						multiline: 1
+					} 
+				],
+
 				'tailwindcss/no-custom-classname': 'off',
 			},
 		},
