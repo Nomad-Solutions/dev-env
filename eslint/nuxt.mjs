@@ -115,10 +115,10 @@ export default function createConfig(withNuxt, tsProjectRoot) {
 				'no-useless-assignment': 'off',
 
 				// When importing from vue files, it is not possible to use ts static analysis to its full extent: https://github.com/typescript-eslint/typescript-eslint/issues/2865
-				'no-unsafe-argument': 'off',
-				'no-unsafe-call': 'off',
-				'no-unsafe-assignment': 'off',
-				'no-unsafe-unary-minus': 'off'
+				'@typescript-eslint/no-unsafe-argument': 'off',
+				'@typescript-eslint/no-unsafe-call': 'off',
+				'@typescript-eslint/no-unsafe-assignment': 'off',
+				'@typescript-eslint/no-unsafe-unary-minus': 'off'
 				// it might be neccessary to disable more rules here: https://typescript-eslint.io/rules/no-unsafe-declaration-merging
 
 			}
