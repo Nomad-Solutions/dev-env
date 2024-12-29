@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.0-10](https://github.com/Nomad-Solutions/dev-env/compare/v3.0.0-9...v3.0.0-10) (2024-12-29)
+
+
+### Features
+
+* **eslint:** add rule for vue/max-attributes-per-line ([092d747](https://github.com/Nomad-Solutions/dev-env/commit/092d74777f33bf6790aca455831e05dc9434095e))
+
+
+### Bug Fixes
+
+* **eslint:** disable typed rules that conflict with vue ([28efc50](https://github.com/Nomad-Solutions/dev-env/commit/28efc507131093124c0efbdc7a8fa20e43aaafae))
+
 ## [3.0.0-9](https://github.com/Nomad-Solutions/dev-env/compare/v3.0.0-8...v3.0.0-9) (2024-12-26)
 
 
