@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.0-11](https://github.com/Nomad-Solutions/dev-env/compare/v3.0.0-10...v3.0.0-11) (2024-12-29)
+
+
+### Bug Fixes
+
+* **eslint:** correct wrong rule names for nuxt ([d9906bc](https://github.com/Nomad-Solutions/dev-env/commit/d9906bcc2c62b591a3f1d39bf7d94091ee29ca38))
+
 ## [3.0.0-10](https://github.com/Nomad-Solutions/dev-env/compare/v3.0.0-9...v3.0.0-10) (2024-12-29)
 
 
