@@ -16,6 +16,12 @@ export default {
 				]
 			} 
 		],
+		'at-rule-no-deprecated': [
+			true,
+			{
+				ignoreAtRules: [ 'apply' ]
+			} 
+		],
 		'function-no-unknown': [
 			true,
 			{
