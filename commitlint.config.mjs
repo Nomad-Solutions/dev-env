@@ -7,6 +7,7 @@ export default {
 			[
 				'commitlint',
 				'eslint',
+				'stylelint',
 				'lint-staged',
 				'tsconfig',
 				'versioning'
