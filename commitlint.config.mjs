@@ -10,7 +10,8 @@ export default {
 				'stylelint',
 				'lint-staged',
 				'tsconfig',
-				'versioning'
+				'versioning',
+				'tailwind'
 			] 
 		]
 	}
