@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.0](https://github.com/Nomad-Solutions/dev-env/compare/v3.0.0-11...v3.0.0) (2025-01-26)
+
+
+### Bug Fixes
+
+* **commitlint:** add stylelint scope ([09a8243](https://github.com/Nomad-Solutions/dev-env/commit/09a8243eb570734fa6d90bb575a7eacd1ff511ce))
+* **stylelint:** add [@apply](https://github.com/apply) to allowed deprecated at-rules ([0f4df33](https://github.com/Nomad-Solutions/dev-env/commit/0f4df33baa2def2d37538c543d208494c80eb055))
+* **tailwind:** remove opinionated styles ([d7b87e3](https://github.com/Nomad-Solutions/dev-env/commit/d7b87e3b37303a428e369492919d8d8ed3a34340))
+
 ## [3.0.0-11](https://github.com/Nomad-Solutions/dev-env/compare/v3.0.0-10...v3.0.0-11) (2024-12-29)
 
 
