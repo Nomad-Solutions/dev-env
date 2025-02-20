@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.1](https://github.com/Nomad-Solutions/dev-env/compare/v3.0.0...v3.0.1) (2025-02-20)
+
+
+### Bug Fixes
+
+* **nuxt:** remove typecheck on build ([4bab4b8](https://github.com/Nomad-Solutions/dev-env/commit/4bab4b898743189fd994359c350129601454e520))
+
 ## [3.0.0](https://github.com/Nomad-Solutions/dev-env/compare/v3.0.0-11...v3.0.0) (2025-01-26)
 
 
