@@ -11,7 +11,8 @@ export default {
 				'lint-staged',
 				'tsconfig',
 				'versioning',
-				'tailwind'
+				'tailwind',
+				'nuxt'
 			] 
 		]
 	}

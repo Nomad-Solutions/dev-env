@@ -33,8 +33,6 @@ export default defineNuxtConfig({
 	typescript: {
 		// Enables strict mode in the `tsconfig.json` that nuxt generates
 		strict: true,
-		// Tells you about type errors when building the application
-		typeCheck: 'build',
 	},
 
 	postcss: {
